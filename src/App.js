@@ -2,6 +2,8 @@ import React from 'react';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 import './components/Todo.css';
+import { Card, Header, Icon } from 'semantic-ui-react';
+import 'semantic-ui-css/semantic.min.css';
 
 
 const todos=[
@@ -72,15 +74,25 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <div>
-          <h2>Your To-Do List</h2>
+      <div className='appBody'>
+      <Card>
+        <Card.Content>
+          <Header color='teal' as='h2'>
+            <Icon color='teal' name='edit outline'/>
+            To-Do-List
+          </Header>
+        </Card.Content>
+        <Card.Content>
           <TodoForm addItem={this.addItem}/>
-        </div>
-        <TodoList
-        toggleTask={this.toggleTask}
-        todos={this.state.todos}
-        handleRemove={this.handleRemove}/>
+        </Card.Content>
+        <Card.Content>
+          <TodoList
+          toggleTask={this.toggleTask} 
+          todos={this.state.todos}
+          handleRemove={this.handleRemove}
+          />
+        </Card.Content>   
+      </Card>
       </div>
     );
   }

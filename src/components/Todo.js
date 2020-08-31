@@ -1,13 +1,16 @@
 import React  from 'react';
+import { List } from 'semantic-ui-react';
 
 const Todo = (props) => {
 
     return(
-        <div
+        <List.Item
         onClick = {()  => props.toggleTask(props.item.id)}
         className = {`item${props.item.completed ? " completed" : ""}`}>
-            <p>{props.item.task}</p>
-        </div>
+            <List.Content>
+                <List.Description>{props.item.task}</List.Description>
+            </List.Content>
+        </List.Item>
     );
 };
 
