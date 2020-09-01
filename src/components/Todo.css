@@ -1,0 +1,10 @@
+.item.completed {
+    text-decoration: line-through;
+  color: purple;
+}
+
+.appBody {
+  display: flex;
+  justify-content: center;
+  margin: 5%;
+}
